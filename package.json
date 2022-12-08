@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/SarahD03/anime-revival-backend#readme",
   "dependencies": {
+    "@ngneat/falso": "^6.3.0",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",

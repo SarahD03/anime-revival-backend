@@ -27,7 +27,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       description: DataTypes.TEXT,
       image: DataTypes.TEXT,
-
       ownerId: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -45,5 +44,5 @@ module.exports = (sequelize, DataTypes) => {
       tableName: 'posts'
     }
   )
-  return Post
+  return Posts
 }
