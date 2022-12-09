@@ -11,7 +11,10 @@ const GetAllPosts = async (req, res) => {
 
 const GetPostDetails = async (req, res) => {
   try {
-    const post = await Posts.findByPk(req.params.post_id)
+    const post = await Posts.findByPk(req.params.post_id, {
+      include: [{ model: Comment, as: 'comments' }]
+    })
+
     res.send(post)
   } catch (error) {
     throw error
