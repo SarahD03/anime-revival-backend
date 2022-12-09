@@ -49,7 +49,7 @@ const DeletePost = async (req, res) => {
   try {
     // vv finding the id of the twert that is getting deleted
     let postId = parseInt(req.params.post_id)
-    await Twerts.destroy({ where: { id: postId } })
+    await Posts.destroy({ where: { id: postId } })
     res.send({ message: `Deleted post : ${postId}` })
   } catch (error) {
     throw error
