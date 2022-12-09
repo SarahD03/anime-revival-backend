@@ -38,8 +38,7 @@ const Register = async (req, res) => {
 // const updatePassword = async (req, res) => {
 //   try {
 //     const user = await User.findOne({
-//       where: { userName: req.body.userName },
-//       raw: true
+//       where: { userName: req.body.userName }
 //     })
 //     const { password } = req.body
 //     let passwordDigest = await middleware.hashPassword(password)
