@@ -11,15 +11,6 @@ const GetComments = async (req, res) => {
   }
 }
 
-// const GetComments = async (req, res) => {
-//   try {
-//     let post_Id = parseInt(req.params.postId)
-//     const comments = await Comment.findAll({ where: { postId: post_Id } })
-//     res.json(comments)
-//   } catch (error) {
-//     throw error
-//   }
-// }
 const GetCommentsById = async (req, res) => {
   try {
     const comment = await Comment.findByPk(req.params.owner_id)
