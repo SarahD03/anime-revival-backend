@@ -5,7 +5,7 @@ const middleware = require('../middleware')
 Router.get('/all', controller.GetAllPosts)
 Router.get('/:post_id', controller.GetPostDetails)
 Router.post(
-  '/:user_id',
+  '/',
   middleware.stripToken,
   middleware.verifyToken,
   controller.CreateAPost
