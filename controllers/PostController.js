@@ -2,7 +2,9 @@ const { User, Posts, Comment } = require('../models')
 
 const GetAllPosts = async (req, res) => {
   try {
-    const posts = await Posts.findAll()
+    const posts = await Posts.findAll({
+      include: [{ model: User, as: 'owner', attributes: ['userName'] }]
+    })
     res.send(posts)
   } catch (error) {
     throw error
