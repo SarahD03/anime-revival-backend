@@ -25,12 +25,12 @@ const GetPostDetails = async (req, res) => {
 
 const CreateAPost = async (req, res) => {
   try {
-    let ownerId = parseInt(req.params.user_id)
-    let post = {
-      ownerId,
-      ...req.body
-    }
-    let createPost = await Posts.create(post)
+    // let ownerId = parseInt(req.params.user_id)
+    // let post = {
+    //   ownerId,
+    //   ...req.body
+    // }
+    const createPost = await Posts.create({ ...req.body })
     res.send(createPost)
   } catch (error) {
     throw error
