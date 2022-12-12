@@ -14,7 +14,8 @@ const GetAllPosts = async (req, res) => {
 const GetPostDetails = async (req, res) => {
   try {
     const post = await Posts.findByPk(req.params.post_id, {
-      include: [{ model: Comment, as: 'comments' }]
+      include: [{ model: Comment, User, as: 'comments' }]
+      //   include: [{ model: User, as: 'owner', attributes: ['userName'] }]
     })
 
     res.send(post)

@@ -4,23 +4,8 @@ const middleware = require('../middleware')
 
 Router.get('/all', controller.GetAllPosts)
 Router.get('/:post_id', controller.GetPostDetails)
-Router.post(
-  '/',
-  middleware.stripToken,
-  middleware.verifyToken,
-  controller.CreateAPost
-)
-Router.put(
-  '/:post_id',
-  middleware.stripToken,
-  middleware.verifyToken,
-  controller.UpdatePost
-)
-Router.delete(
-  '/:post_id',
-  middleware.stripToken,
-  middleware.verifyToken,
-  controller.DeletePost
-)
+Router.post('/', controller.CreateAPost)
+Router.put('/:post_id', controller.UpdatePost)
+Router.delete('/:post_id', controller.DeletePost)
 
 module.exports = Router
