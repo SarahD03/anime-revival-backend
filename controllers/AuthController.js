@@ -35,30 +35,6 @@ const Register = async (req, res) => {
   }
 }
 
-// const updatePassword = async (req, res) => {
-//   try {
-//     const user = await User.findOne({
-//       where: { userName: req.body.userName }
-//     })
-//     const { password } = req.body
-//     let passwordDigest = await middleware.hashPassword(password)
-//     if (user && passwordDigest !== user.passwordDigest) {
-//       const update = await User.update(
-//         { passwordDigest },
-//         {
-//           where: {
-//             passwordDigest: user.passwordDigest
-//           }
-//         }
-//       )
-//       res.send(update)
-//     }
-//     res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
-//   } catch (error) {
-//     throw error
-//   }
-// }
-
 const updatePassword = async (req, res) => {
   try {
     const user = await User.findOne({
